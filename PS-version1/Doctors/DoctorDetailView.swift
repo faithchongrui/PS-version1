@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct DoctorDetailView: View {
+    @State var doctornumber = 0
+    @Environment(\.openURL) var openURL
+    
     var body: some View {
         
         // background image
@@ -19,26 +22,13 @@ struct DoctorDetailView: View {
                 .ignoresSafeArea(.all)
             
             VStack {
-    //            NavigationLink(destination: AppointmentView()) {
-    //                VStack {
-    //                    Text("Appointments")
-    //                        .font(.title)
-    //                    Text("(Book, Reschedule, Cancel)")
-    //                        .font(.body)
-    //                }
-    //                .frame(width: 350, height: 100)
-    //                .foregroundColor(.white)
-    //                .background(.gray)
-    //                .cornerRadius(15)
-    //            }
-                
                 HStack {
                     // doctor picture
 //                    Image(systemName: "circle.fill")
 //                        .resizable()
 //                        .scaledToFit()
 //                        .padding()
-                    Image(doctors[DoctorsView(doctor: doctors[1]).doctornumber % doctors.count].pfp)
+                    Image(doctors[doctornumber % doctors.count].pfp)
                         .resizable()
                         .scaledToFit()
                         .frame(alignment: .center)
@@ -47,15 +37,15 @@ struct DoctorDetailView: View {
                     
                     // information
                     VStack(alignment: .leading) {
-                        Text(doctors[DoctorsView(doctor: doctors[0]).doctornumber % doctors.count].name)
+                        Text(doctors[doctornumber % doctors.count].name)
                             .bold()
                             .font(.title)
                             .foregroundColor(.white)
-                        Text(doctors[DoctorsView(doctor: doctors[0]).doctornumber % doctors.count].qualifications)
+                        Text(doctors[doctornumber % doctors.count].qualifications)
                             .bold()
-                        Text(doctors[DoctorsView(doctor: doctors[0]).doctornumber % doctors.count].department)
+                        Text(doctors[doctornumber % doctors.count].department)
                             .bold()
-                        Text(doctors[DoctorsView(doctor: doctors[0]).doctornumber % doctors.count].email)
+                        Text(doctors[doctornumber % doctors.count].email)
                             .bold()
                     }
                     .padding(.trailing)
@@ -68,27 +58,33 @@ struct DoctorDetailView: View {
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(.white, lineWidth: 4)
                 )
-
                 // buttons to service information
-                NavigationLink(destination: ServicesView()) {
-                    VStack {
-                        Text("Services Available")
-                            .font(.title)
-                        Text("(Practices, Counselling)")
-                            .font(.body)
-                    }
-                    .frame(width: 400, height: 150)
-                    .foregroundColor(textColour)
-                    .background(backgroundColour)
-                    .cornerRadius(20)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 20)
-                            .stroke(.white, lineWidth: 4)
-                    )
+                VStack {
+                    Text("Services Available")
+                        .font(.title)
+                    Text("(Practices, Counselling)")
+                        .font(.body)
                 }
-
+                .frame(width: 400, height: 150)
+                .foregroundColor(textColour)
+                .background(backgroundColour)
+                .cornerRadius(20)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(.white, lineWidth: 4)
+                )
+                .onTapGesture {
+                    let url = URL(string: "https://www.ttsh.com.sg/Patients-and-Visitors/Medical-Services/Pages/default.aspx")
+                    if let url = url {
+                        openURL(url)
+                    }
+                }
                 // buttons to other information
                 NavigationLink(destination: SimilarView()) {
+
+                Button {
+                    
+                } label: {
                     VStack {
                         Text("Similar:")
                             .font(.title)
@@ -104,7 +100,6 @@ struct DoctorDetailView: View {
                             .stroke(.white, lineWidth: 4)
                     )
                 }
-
                 // button to show a route to the doctor's office / clinic
                 Button {
                     // code
@@ -121,6 +116,10 @@ struct DoctorDetailView: View {
                                 .stroke(.white, lineWidth: 4)
                         )
                 }
+                Text("This page is a work-in-progress, only the services button works.")
+                    .padding()
+                    .background(.gray)
+                    .cornerRadius(15)
             }
         }
         .padding(.top, 150)
@@ -131,4 +130,5 @@ struct DoctorDetailView_Previews: PreviewProvider {
     static var previews: some View {
         DoctorDetailView()
     }
+}
 }

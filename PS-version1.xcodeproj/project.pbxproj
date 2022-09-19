@@ -24,9 +24,8 @@
 		209EF3F928C8B9680011A5F3 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209EF3E628C8B9680011A5F3 /* LocationView.swift */; };
 		209EF3FF28C8F19D0011A5F3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209EF3FE28C8F19D0011A5F3 /* Extensions.swift */; };
 		209EF40228CBA4000011A5F3 /* Landmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209EF40128CBA4000011A5F3 /* Landmarks.swift */; };
+		20DC870C28D8A7870068AAF4 /* DoctorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18C30C28AF686F00C55DCD /* DoctorsView.swift */; };
 		2E18C30928AF682600C55DCD /* SimilarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18C30828AF682500C55DCD /* SimilarView.swift */; };
-		2E18C30B28AF685100C55DCD /* ServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18C30A28AF685100C55DCD /* ServicesView.swift */; };
-		2E18C30D28AF686F00C55DCD /* DoctorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18C30C28AF686F00C55DCD /* DoctorsView.swift */; };
 		2E4A622728C8B53800933F21 /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4A622628C8B53700933F21 /* Colours.swift */; };
 		2E4FDF6D288638B70000CA9E /* HospitalNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FDF6C288638B60000CA9E /* HospitalNavigationView.swift */; };
 		2E4FDF71288639F40000CA9E /* Navigate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4FDF70288639F40000CA9E /* Navigate.swift */; };
@@ -277,7 +276,6 @@
 				2E4A622728C8B53800933F21 /* Colours.swift in Sources */,
 				2E609F2628858D0D00D09E14 /* PS_version1App.swift in Sources */,
 				209EF3EE28C8B9680011A5F3 /* StepManager.swift in Sources */,
-				2E18C30B28AF685100C55DCD /* ServicesView.swift in Sources */,
 				209EF3F528C8B9680011A5F3 /* MarkerView.swift in Sources */,
 				209EF3F328C8B9680011A5F3 /* ZoomImage.swift in Sources */,
 				2E609F3428858D7D00D09E14 /* Hospital.swift in Sources */,
@@ -289,8 +287,8 @@
 				2E694EED28B372CD00FCAAA3 /* Appointment.swift in Sources */,
 				209EF3EF28C8B9680011A5F3 /* LineConnection.swift in Sources */,
 				209EF3F628C8B9680011A5F3 /* ScreenPositions.swift in Sources */,
-				2E18C30D28AF686F00C55DCD /* DoctorsView.swift in Sources */,
 				2E4FDF6D288638B70000CA9E /* HospitalNavigationView.swift in Sources */,
+				20DC870C28D8A7870068AAF4 /* DoctorsView.swift in Sources */,
 				2E4FDF7328863EC20000CA9E /* CongratsScreen.swift in Sources */,
 				209EF3F828C8B9680011A5F3 /* CompassHeading.swift in Sources */,
 				209EF3FF28C8F19D0011A5F3 /* Extensions.swift in Sources */,
