@@ -9,8 +9,13 @@ import SwiftUI
 
 struct ServicesView: View {
     var body: some View {
-        Text("View the Practices available in this hospital")
+        VStack {
+            Text("View the Practices available in this hospital")
+        }
+        .background(.white)
+        .edgesIgnoringSafeArea(.all)
     }
+    
 }
 
 struct ServicesView_Previews: PreviewProvider {

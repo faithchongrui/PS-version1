@@ -15,6 +15,6 @@ struct Hospital: Identifiable {
 }
 
 var hospitals = [
-    Hospital(name: "Tan Tok Seng Hospital", image: "PS-hospitalA"),
+    Hospital(name: "Tan Tock Seng Hospital", image: "PS-hospitalA"),
     Hospital(name: "Hospital B", image: "PS-hospitalB"),
 ]

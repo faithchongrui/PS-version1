@@ -16,7 +16,7 @@ struct JourneyView: View {
     @State var returnTo = false
     
     var body: some View {
-        NewMapView()
+        NewMapView(afjwifwf: afjwifwf())
     }
 }
 

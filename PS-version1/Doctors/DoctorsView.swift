@@ -7,36 +7,54 @@
 
 import SwiftUI
 
-let doctors = [
-    DoctorProfile(name: "Ms Faith", qualifications: "Cool", department: "ADMT", email: "faith@gmail.com")
-]
-
-let doctor1 = DoctorProfile(name: "Ms Faith", qualifications: "Cool", department: "ADMT", email: "faith@gmail.com")
-
 struct DoctorsView: View {
+    
+    var doctor: DoctorProfile
+    
+    @State var doctornumber = 0
+    @State private var searchText = ""
+    
     var body: some View {
             List {
-                ForEach(1...doctors.count, id: \.self) { _ in
-//                    Text(DoctorProfile.name)
+                ForEach(0..<doctors.count, id: \.self) { doctor in
+                    NavigationLink(destination: DoctorDetailView()) {
+                        HStack {
+                            Image(doctors[doctornumber % doctors.count].pfp)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(alignment: .center)
+                                .clipShape(Circle())
+                                .padding(.trailing)
+                            VStack {
+                                Text(doctors[doctornumber % doctors.count].name)
+                                    .bold()
+                                    .font(.title)
+                                    .foregroundColor(.indigo)
+                                Text(doctors[doctornumber % doctors.count].department)
+                                    .foregroundColor(.indigo)
+                                Text(doctors[doctornumber % doctors.count].email)
+                                    .foregroundColor(.indigo)
+                            }
+                            .padding()
+                        }
+                    }
+                    .listRowBackground(Colours.lightblue)
+                    .listRowSeparatorTint(.black)
+                    .listItemTint(.white)
+                    .accentColor(colour)
+                   
                 }
+                .navigationTitle("Doctors")
+            }
             .navigationTitle("Doctors")
-        }
-//        ForEach(1...doctors.count, id: \.self) {_ in
-//            VStack {
-////                Text(doctors.name)
-////                Text(doctors.qualifications)
-//                Text(doctor1.name)
-//                Text(doctor1.qualifications)
-//                Text(doctor1.department)
-//                Text(doctor1.email)
-//                //                Text()
-//            }
-//        }
+            .searchable(text: $searchText)
+            .listItemTint(.white)
+            .textInputAutocapitalization(.never)
     }
 }
 
 struct DoctorsView_Previews: PreviewProvider {
     static var previews: some View {
-        DoctorsView()
+        DoctorsView(doctor: doctors[0])
     }
 }

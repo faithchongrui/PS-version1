@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct AppointmentView: View {
+struct SimilarView: View {
     var body: some View {
-        Text("Book, Reschedule and Cancel your appointments")
+        Text("Find similar doctors or services")
     }
 }
 
-struct AppointmentView_Previews: PreviewProvider {
+struct SimilarView_Previews: PreviewProvider {
     static var previews: some View {
-        AppointmentView()
+        SimilarView()
     }
 }

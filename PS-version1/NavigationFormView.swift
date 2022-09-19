@@ -39,7 +39,7 @@ struct NavigationFormView: View {
             }
 //            NavigationLink(destination: JourneyView(steps: 9, destination: "Reoom 1"), isActive: $startJourney) {
 //            }
-            NavigationLink(destination: NewMapView(), isActive: $startJourney) {
+            NavigationLink(destination: NewMapView(afjwifwf: afjwifwf()), isActive: $startJourney) {
                 
             }
         }

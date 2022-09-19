@@ -12,6 +12,7 @@ struct PS_version1App: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(afjwifwf())
         }
     }
 }

@@ -13,7 +13,7 @@ import SwiftUI
 
 struct Line: Shape {
     @StateObject var screenpositions = Positioning()
-    @StateObject var step = Steps()
+    @StateObject var step = StepsModel()
     // line should be connecting my location and next landmark, depending on which step the thing is on the addLine one should be that location
     // maybe a new var and it is set to like newVar == 2 {
     //                                          anotherVar (this one for storing the location) = CGFloat(screenpositions.escalator.0)/10)+350

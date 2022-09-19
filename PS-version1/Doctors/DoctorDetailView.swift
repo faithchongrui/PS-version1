@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DoctorView: View {
+struct DoctorDetailView: View {
     var body: some View {
         
         // background image
@@ -34,18 +34,31 @@ struct DoctorView: View {
                 
                 HStack {
                     // doctor picture
-                    Image(systemName: "circle.fill")
+//                    Image(systemName: "circle.fill")
+//                        .resizable()
+//                        .scaledToFit()
+//                        .padding()
+                    Image(doctors[DoctorsView(doctor: doctors[1]).doctornumber % doctors.count].pfp)
                         .resizable()
                         .scaledToFit()
-                        .padding()
+                        .frame(alignment: .center)
+                        .clipShape(Circle())
+                        .padding(.trailing)
                     
-                    // placeholders
+                    // information
                     VStack(alignment: .leading) {
-                        Text("Doctor Name")
-                        Text("Certifications")
-                        Text("Department")
-                        Text("Email")
+                        Text(doctors[DoctorsView(doctor: doctors[0]).doctornumber % doctors.count].name)
+                            .bold()
+                            .font(.title)
+                            .foregroundColor(.white)
+                        Text(doctors[DoctorsView(doctor: doctors[0]).doctornumber % doctors.count].qualifications)
+                            .bold()
+                        Text(doctors[DoctorsView(doctor: doctors[0]).doctornumber % doctors.count].department)
+                            .bold()
+                        Text(doctors[DoctorsView(doctor: doctors[0]).doctornumber % doctors.count].email)
+                            .bold()
                     }
+                    .padding(.trailing)
                 }
                 .frame(width: 400, height: 200)
                 .foregroundColor(.white)
@@ -75,7 +88,7 @@ struct DoctorView: View {
                 }
 
                 // buttons to other information
-                NavigationLink(destination: DoctorsView()) {
+                NavigationLink(destination: SimilarView()) {
                     VStack {
                         Text("Similar:")
                             .font(.title)
@@ -114,8 +127,8 @@ struct DoctorView: View {
     }
 }
 
-struct DoctorView_Previews: PreviewProvider {
+struct DoctorDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DoctorView()
+        DoctorDetailView()
     }
 }

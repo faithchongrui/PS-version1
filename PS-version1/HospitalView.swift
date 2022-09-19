@@ -30,7 +30,7 @@ struct HospitalView: View {
                 Label("Hospital", systemImage: "house.fill")
             }
             
-            DoctorView()
+            DoctorsView(doctor: doctors[0])
                 .tabItem {
                     Label("Doctors", systemImage: "person.fill")
                 }

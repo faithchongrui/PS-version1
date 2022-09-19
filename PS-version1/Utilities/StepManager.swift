@@ -8,14 +8,16 @@
 import Foundation
 import SwiftUI
 
-struct StepsContent: Codable, Identifiable {
+struct Steps: Codable, Identifiable, Hashable {
     var id: Int
     var description: String
 }
 
-class Steps: ObservableObject {
-    lazy var steplist: [StepsContent] = [StepsContent(id: 1, description: "go straight"),
-                                         StepsContent(id: 2, description: "go up a floor"),
-                                         StepsContent(id: 3, description: "turn left"),
-                                         StepsContent(id: 4, description: "turn right")]
+class StepsModel: ObservableObject {
+    @EnvironmentObject var sm: StepsModel
+    @Published var steplist: [Steps] = [Steps(id: 1, description: "go straight"),
+                                  Steps(id: 2, description: "go up a floor"),
+                                  Steps(id: 3, description: "turn left"),
+                                  Steps(id: 4, description: "turn right")]
+    @Published var somenewmapthing: Int = 0
 }
