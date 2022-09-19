@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SimilarView: View {
     var body: some View {
-        Text("Find similar doctors or services")
+        Text("Find similar  or services")
     }
 }
 

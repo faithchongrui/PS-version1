@@ -44,7 +44,7 @@ struct DoctorsView: View {
                     .accentColor(colour)
                    
                 }
-                .navigationTitle("Doctors")
+                
             }
             .navigationTitle("Doctors")
             .searchable(text: $searchText)

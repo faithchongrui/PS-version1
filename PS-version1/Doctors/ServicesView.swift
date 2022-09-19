@@ -10,7 +10,7 @@ import SwiftUI
 struct ServicesView: View {
     var body: some View {
         VStack {
-            Text("View the Practices available in this hospital")
+            Text("View the  available in this hospital")
         }
         .background(.white)
         .edgesIgnoringSafeArea(.all)
